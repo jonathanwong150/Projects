@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">CS310 Jonathan Wong</string>
+    <string name="clock">\uD83D\uDD53</string>
+    <string name="flag">\uD83D\uDEA9</string>
+    <string name="mine">\uD83D\uDCA3</string>
+    <string name="pick">\u26CF</string>
+    <string name="flags">4</string>
+    <string name="time">00</string>
+</resources>
