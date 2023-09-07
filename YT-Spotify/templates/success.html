@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Success - YouTube to Spotify</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <header>
+        <h1>Conversion Successful</h1>
+    </header>
+    <main>
+        <h2>Songs Added:</h2>
+        <div class="song-list">
+            {% for song in added_songs %}
+            <div class="song-item">
+                <img class="song-cover" src="{{ song.cover_url }}" alt="Cover">
+                <div class="song-info">
+                    <span><strong>{{ song.name }}</strong></span>
+                    <span>by {{ song.artist }}</span>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+        {% if not_added_songs %}
+        <h2>Songs Not Added (Already Liked):</h2>
+        <div class="song-list">
+            {% for song in not_added_songs %}
+            <div class="song-item">
+                <img class="song-cover" src="{{ song.cover_url }}" alt="Cover">
+                <div class="song-info">
+                    <span><strong>{{ song.name }}</strong></span>
+                    <span>by {{ song.artist }}</span>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+        {% endif %}
+        <a class="go-back-button" href="{{ url_for('index') }}">Go Back</a>
+    </main>
+</body>
+</html>

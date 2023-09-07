@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>YouTube to Spotify</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <header>
+        <h1>YouTube to Spotify</h1>
+    </header>
+    <main>
+        <form action="/convert" method="post">
+            <label for="playlist_url">YouTube Playlist URL:</label>
+            <input type="text" id="playlist_url" name="playlist_url" placeholder="Enter YouTube Playlist URL">
+            <button type="submit">Convert</button>
+        </form>
+        {% if message %}
+        <p>{{ message }}</p>
+        {% endif %}
+    </main>
+</body>
+</html>
